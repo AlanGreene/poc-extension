@@ -1,31 +1,36 @@
 import React, { Component } from 'react';
-import { Button, Checkbox, Form, FormGroup, TextInput } from 'carbon-components-react';
+import { NavLink, Route, withRouter } from 'react-router-dom';
 
-export default class ExtensionExample extends Component {
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log('Form submitted');
-  };
+import LandingPage from './LandingPage';
+import SubPage from './SubPage';
 
-  render() {
-    return (
-      <Form onSubmit={this.handleSubmit}>
-        <FormGroup legendText="Checkboxes">
-          <Checkbox defaultChecked labelText="Checked" id="checkbox-0" />
-          <Checkbox labelText="Default" id="checkbox-1" />
-          <Checkbox disabled labelText="Disabled" id="checkbox-2" />
-        </FormGroup>
+import styles from './ExtensionExample.css';
 
-        <TextInput
-          id="text-0"
-          labelText="Text Input"
-          placeholder="Placeholder text"
-        />
+function ExtensionExample({ match }) {
+  return (
+    <>
+      <nav>
+        <ul>
+          <li className={styles.navLink}>
+            <NavLink activeClassName={styles.active} exact to={match.url}>Extension landing page</NavLink>
+          </li>
+          <li className={styles.navLink}>
+            <NavLink activeClassName={styles.active} to={`${match.url}/sub-page`}>Extension sub page</NavLink>
+          </li>
+        </ul>
+      </nav>
 
-        <Button type="submit" style={{ marginTop: "2em" }}>
-          Submit
-        </Button>
-      </Form>
-    );
-  }
+      <Route
+        exact
+        path={match.path}
+        component={LandingPage}
+      />
+      <Route
+        path={`${match.path}/sub-page`}
+        component={SubPage}
+      />
+    </>
+  );
 }
+
+export default withRouter(ExtensionExample);
