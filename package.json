@@ -13,8 +13,8 @@
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
-    "carbon-components": "^9.87.2",
-    "carbon-components-react": "^6.81.0",
+    "carbon-components": "^10.1.0",
+    "carbon-components-react": "^7.1.0",
     "carbon-icons": "^7.0.7",
     "http-server": "^0.11.1",
     "rollup": "^1.10.0",
@@ -26,8 +26,8 @@
     "rollup-plugin-postcss": "^2.0.3"
   },
   "peerDepedencies": {
-    "carbon-components": "^9.87.2",
-    "carbon-components-react": "^6.81.0",
+    "carbon-components": "^10.1.0",
+    "carbon-components-react": "^7.1.0",
     "carbon-icons": "^7.0.7",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
