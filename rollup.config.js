@@ -24,6 +24,7 @@ const config = {
       'carbon-components-react': 'CarbonComponentsReact',
       'react': 'React',
       'react-dom': 'ReactDOM',
+      'react-redux': 'ReactRedux',
       'react-router-dom': 'ReactRouterDOM'
     }),
     postcss({
